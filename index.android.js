@@ -16,13 +16,19 @@ import Button from './src/component/Button';
 import TestStyle from './src/component/TestStyle';
 import LayoutTest from './src/component/LayoutTest';
 import DataTest from './src/component/DataTest';
+import SizeTest from './src/component/SizeTest';
+import TextInputTest from './src/component/TextInputTest';
+import ScrollViewTest from './src/component/ScrollViewTest';
+import ListViewTest from './src/component/ListViewTest';
+import FetchDataTest from './src/component/FetchDataTest';
+import NavigationTest from './src/component/NavigationTest';
 
 class SumReact extends Component {
     render() {
         return (
             <View style={styles.container}>
 
-                {/*<View  style={styles.view} />*/}
+                <View style={styles.view}/>
 
                 {/*自定义按钮*/}
                 {/*<Button/>*/}
@@ -31,9 +37,24 @@ class SumReact extends Component {
                 {/*<TestStyle/>*/}
 
                 {/*布局测试*/}
-                <LayoutTest/>
+                {/*<LayoutTest/>*/}
 
+                {/*属性测试*/}
                 {/*<DataTest text="Hello State"/>*/}
+
+                {/*dp,weigh*/}
+                {/*<SizeTest/>*/}
+
+                {/*<TextInputTest/>*/}
+
+                {/*<ListViewTest/>*/}
+
+                {/*<ScrollViewTest/>*/}
+
+                {/*<FetchDataTest/>*/}
+
+                <NavigationTest/>
+
             </View>
         );
     }
@@ -41,11 +62,11 @@ class SumReact extends Component {
 
 const styles = StyleSheet.create({
     container: {
-        flex:1,
-        justifyContent: 'center',
-        backgroundColor: '#F5FCaa',
-        flexDirection:'column',
-        alignItems:'center',
+        flex: 1,//权重 weigh
+        justifyContent: 'flex-start',//gray:center-vertical
+        backgroundColor: '#F5FCa0',
+        flexDirection: 'column',//线性布局 orientation，column:垂直方法，row:水平方向
+        alignItems: 'stretch',//gray:center-horizontal
     },
 
     bigblue: {
@@ -59,9 +80,9 @@ const styles = StyleSheet.create({
     },
 
     view: {
-        backgroundColor:'red',
-        width:70,
-        height:90,
+        backgroundColor: 'red',
+        width: 200,
+        height: 100,
     },
 });
 

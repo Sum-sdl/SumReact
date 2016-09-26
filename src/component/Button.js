@@ -21,7 +21,8 @@ export default class Button extends Component {
     }
 
     customHandlerPress = () => {
-        alert("Hello RN" + this.state.status);
+        const {onPress}=this.props;
+        onPress();
     }
 
     render() {
@@ -35,7 +36,7 @@ export default class Button extends Component {
                 <TouchableOpacity style={styles.button}
                                   onPress={this.customHandlerPress}>
                     <Text style={styles.text}>
-                        Welcome {text}
+                        {text}
                     </Text>
 
                 </TouchableOpacity>
@@ -61,11 +62,11 @@ const styles = StyleSheet.create({
         backgroundColor: 'green',
         justifyContent: 'center',
         overflow: 'hidden',
-        alignItems:'center',
+        alignItems: 'center',
     },
 
     text: {
-        fontSize:16,
-        color:'white',
+        fontSize: 16,
+        color: 'white',
     },
 });

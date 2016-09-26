@@ -31,7 +31,7 @@ export default class DataTest extends Component {
 
         let display = this.state.Visible ? this.props.text : ' ';
         return (
-            <Text>{display}</Text>
+            <Text>props:{display}</Text>
         );
     }
 }
