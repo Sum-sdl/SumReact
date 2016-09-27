@@ -21,14 +21,17 @@ import TextInputTest from './src/component/TextInputTest';
 import ScrollViewTest from './src/component/ScrollViewTest';
 import ListViewTest from './src/component/ListViewTest';
 import FetchDataTest from './src/component/FetchDataTest';
-import NavigationTest from './src/component/NavigationTest';
+ import NavigationTest from './src/component/NavigationTest';
+import AnimationViewTest from './src/component/AnimationViewTest';
+import AnimationViewTest2 from './src/component/AnimationViewTest2';
+import NativeViewTest from './src/native/NativeViewTest';
 
 class SumReact extends Component {
     render() {
         return (
             <View style={styles.container}>
 
-                <View style={styles.view}/>
+                {/*<View style={styles.view}/>*/}
 
                 {/*自定义按钮*/}
                 {/*<Button/>*/}
@@ -53,7 +56,13 @@ class SumReact extends Component {
 
                 {/*<FetchDataTest/>*/}
 
-                <NavigationTest/>
+                {/*<NavigationTest/>*/}
+
+                {/*<AnimationViewTest/>*/}
+
+                {/*<AnimationViewTest2/>*/}
+
+                <NativeViewTest/>
 
             </View>
         );

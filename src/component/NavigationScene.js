@@ -3,7 +3,7 @@
  */
 
 import React, {Component, PropTypes} from 'react';
-import {View, TouchableOpacity, Text,StyleSheet} from 'react-native';
+import {View, TouchableOpacity, Text, StyleSheet, TouchableNativeFeedback} from 'react-native';
 
 var Prop = React.PropTypes;
 
@@ -16,10 +16,18 @@ export default class NavigationSence extends Component {
         onBack: Prop.func.isRequired,
     };
 
+    _testFunc() {
+        // alert("func 1");
+    }
+
+    _testFunc2() {
+        alert("func 2");
+    }
+
     render() {
         return (
 
-            <View style={{backgroundColor:'#abc'}}>
+            <View style={{backgroundColor: '#abc'}}>
 
                 <Text>标题:{this.props.title}</Text>
 
@@ -27,9 +35,22 @@ export default class NavigationSence extends Component {
                     <Text style={styles.text}> Next Scene</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={[styles.button,{marginBottom:30}]} onPress={this.props.onBack}>
+                <TouchableOpacity style={[styles.button]} onPress={this.props.onBack}>
                     <Text style={styles.text}> Last Scene</Text>
                 </TouchableOpacity>
+
+
+                <TouchableOpacity style={[styles.button, {marginBottom: 30}]} onPress={this._testFunc2.bind(this)}>
+                    <Text style={styles.text}>func2</Text>
+                </TouchableOpacity>
+
+                <TouchableNativeFeedback
+                    onPress={this._testFunc}
+                    background={TouchableNativeFeedback.SelectableBackground()}>
+                    <View style={{width: 150, height: 50, backgroundColor: 'blue'}}>
+                        <Text style={{margin: 30}}>Button</Text>
+                    </View>
+                </TouchableNativeFeedback>
 
             </View>
 
@@ -54,7 +75,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         overflow: 'hidden',
         alignItems: 'center',
-        marginTop:30
+        marginTop: 30
 
     },
 

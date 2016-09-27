@@ -12,14 +12,15 @@ export default class NavigationTest extends Component {
     render() {
         return (
             <Navigator
-                initialRoute={{title: "Hello World", index: 0}}
+                initialRoute={{title: "Hello World", index: 0, component: 'NavigationScene'}}
 
                 renderScene={
                     (route, navigator) => {
 
-                        console.log("route===="+route);
+                        console.log("route====" + route);
 
                         return <NavigationScene
+
                             title={route.title}
 
                             // Function to call when a new scene should be displayed
